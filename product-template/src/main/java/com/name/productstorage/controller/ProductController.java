@@ -34,7 +34,7 @@ public class ProductController {
             CompletableFuture<List<Product>> products = productService.getAllProducts();
             return products.thenApply(product -> ResponseEntity.ok().body(product));
         } catch (Exception e){
-            return CompletableFuture.completedFuture(ResponseEntity.notFound().build());
+            return CompletableFuture.completedFuture(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build());
         }
     }
 
