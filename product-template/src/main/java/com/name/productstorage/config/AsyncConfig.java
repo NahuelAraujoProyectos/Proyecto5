@@ -13,9 +13,9 @@ public class AsyncConfig {
     @Bean(name = "taskExecutor")
     public Executor taskExecutor(){
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setMaxPoolSize(10);
-        executor.setCorePoolSize(5);
-        executor.setThreadNamePrefix("CarRegistryTheread-");
+        executor.setMaxPoolSize(8);
+        executor.setCorePoolSize(4);
+        executor.setThreadNamePrefix("Registro de coche");
         executor.initialize();
         return executor;
     }
